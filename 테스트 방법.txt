@@ -1,0 +1,35 @@
+테스트 방법 설명
+
+★로그인 전 회원가입 방법
+주소 : 
+localhost:8080/api/v1/join
+방법 : POST
+body - raw -  json 으로 로그인
+{
+    "username":"hki007",
+    "password":"public"
+}
+
+
+★ 로그인 테스트
+주소 : 
+localhost:8080/login 
+방법 : POST
+body - raw -  json 으로 로그인
+{
+    "username":"hki007",
+    "password":"public"
+}
+
+★ 권한이 필요한 주소로의 테스트
+주소 : 
+localhost:8080/api/v1/user
+방법 : POST
+Headers 를 선택하고 
+key                      value
+Authorization         hello
+
+hello가 header로 전송되어 hello가 출력되는지를 보면 된다
+그리고 난뒤 정상 로그인 하고 header에 들어있는 Authorization 에 있는 Bearer 토큰을 가지고
+다시 hello 대신에 넣고 요청해본다
+
